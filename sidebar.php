@@ -45,7 +45,7 @@
 
             <!-- Navigation Items -->
             <ul id="navList" class="mt-6 space-y-4 flex-1 justify-center">
-                <li><a href="dashboard.php" class="flex font-bold items-center space-x-3 hover:bg-white/10 p-3 rounded-lg sidebar-item">
+                <li><a href="admin_dashboard.php" class="flex font-bold items-center space-x-3 hover:bg-white/10 p-3 rounded-lg sidebar-item">
                     <i class="fas fa-chart-line text-lg w-8 transition-all duration-300"></i>
                     <span class="nav-text transition-opacity duration-300">Dashboard</span>
                 </a></li>
@@ -69,6 +69,11 @@
                     <i class="fas fa-user text-lg w-8 transition-all duration-300"></i>
                     <span class="nav-text transition-opacity duration-300">Profile</span>
                 </a></li>
+                <!-- New Users Nav Item -->
+                <li><a href="usersManagement.php" class="flex font-bold items-center space-x-3 hover:bg-white/10 p-3 rounded-lg sidebar-item">
+                    <i class="fas fa-users text-lg w-8 transition-all duration-300"></i>
+                    <span class="nav-text transition-opacity duration-300">Users</span>
+                </a></li>
 
                 <!-- Divider -->
                 <li><hr class="border-t border-gray-500 my-4"></li>
@@ -89,7 +94,7 @@
         <div class="bg-white p-8 rounded-lg shadow-lg w-11/12 sm:w-1/3">
             <h2 class="text-xl font-semibold mb-4">Are you sure you want to log out?</h2>
             <div class="flex justify-end space-x-4">
-                <a href="logout.php" id="confirmLogout" class="px-6 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600">Confirm</a>
+                <a href="admin_logout.php" id="confirmLogout" class="px-6 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600">Confirm</a>
                 <button id="cancelLogout" class="px-6 py-2 bg-gray-300 rounded-lg">Cancel</button>
             </div>
         </div>
@@ -134,7 +139,6 @@
                 text.classList.add('opacity-0', 'hidden');
             });
             sidebarTitle.classList.add('opacity-0', 'hidden');
-            // Logo will be hidden via CSS when w-16 is applied
             sidebarItems.forEach(item => {
                 item.classList.remove('justify-start');
                 item.classList.add('justify-center');
@@ -153,7 +157,6 @@
                 text.classList.remove('opacity-0', 'hidden');
             });
             sidebarTitle.classList.remove('opacity-0', 'hidden');
-            // Logo will be shown via CSS when w-64 is applied
             sidebarItems.forEach(item => {
                 item.classList.remove('justify-center');
                 item.classList.add('justify-start');
@@ -190,7 +193,7 @@
         });
 
         document.getElementById('confirmLogout').addEventListener('click', function() {
-            window.location.href = "logout.php";
+            window.location.href = "admin_logout.php";
         });
 
         // Responsive Behavior

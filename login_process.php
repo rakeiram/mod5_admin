@@ -13,13 +13,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($password, $admin['password'])) {
             $_SESSION['admin_id'] = $admin['id'];
             $_SESSION['admin_name'] = $admin['name'];
-            header("Location: dashboard.php"); // Redirect to Dashboard
+            header("Location: admin_dashboard.php"); // Redirect to Dashboard
             exit();
         } else {
-            echo "<script>alert('Invalid password!'); window.location.href='login.php';</script>";
+            echo "<script>alert('Invalid password!'); window.location.href='admin_login.php';</script>";
         }
     } else {
-        echo "<script>alert('Admin not found!'); window.location.href='login.php';</script>";
+        echo "<script>alert('Admin not found!'); window.location.href='admin_login.php';</script>";
     }
 }
 ?>
